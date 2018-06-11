@@ -5,6 +5,7 @@
  */
 package com.mycompany.personaltechweb.entities;
 
+import com.mycompany.personaltechweb.validators.ValidaSexo;
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Column;
