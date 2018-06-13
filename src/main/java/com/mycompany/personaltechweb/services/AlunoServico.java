@@ -10,7 +10,6 @@ import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.validation.executable.ExecutableType;
 import javax.validation.executable.ValidateOnExecution;
-import javax.ejb.embeddable.EJBContainer;
 
 /**
  *

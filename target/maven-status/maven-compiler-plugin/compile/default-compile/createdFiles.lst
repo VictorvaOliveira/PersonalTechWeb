@@ -7,6 +7,7 @@ com/mycompany/personaltechweb/validators/ValidaSexo.class
 com/mycompany/personaltechweb/entities/RespostasAvaliacao_.class
 com/mycompany/personaltechweb/services/ServicoUsuario.class
 com/mycompany/personaltechweb/entities/Endereco_.class
+com/mycompany/personaltechweb/services/PersonalTrainerServico.class
 com/mycompany/personaltechweb/entities/Aluno_.class
 com/mycompany/personaltechweb/entities/Aluno.class
 com/mycompany/personaltechweb/entities/Pergunta.class
