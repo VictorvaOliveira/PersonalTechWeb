@@ -7,6 +7,7 @@ package com.mycompany.personaltechweb;
 
 import java.util.logging.Logger;
 import javax.ejb.embeddable.EJBContainer;
+//import javax.ejb.embeddable.EJBContainer;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 
