@@ -7,6 +7,7 @@ package com.mycompany.personaltechweb;
 
 //import com.mycompany.personaltechweb.entities.Endereco;
 //import com.mycompany.personaltechweb.entities.PersonalTrainer;
+import com.mycompany.personaltechweb.entities.PersonalTrainer;
 import com.mycompany.personaltechweb.services.PersonalTrainerServico;
 //import java.util.Calendar;
 import javax.naming.NamingException;
@@ -40,7 +41,9 @@ public class PersonalTrainerTest extends Teste {
 
     @Test
     public void consultaPorID() {
-        assertNotNull(PersonalTrainerServico.consultaPorID(1));
+        PersonalTrainer pt = PersonalTrainerServico.consultaPorID(1);
+//        assertNotNull(PersonalTrainerServico.consultaPorID(1));
+        assertEquals("cba123", pt.getLogin());
     }
 
 //    @Test

@@ -43,7 +43,7 @@ public class PersonalTrainerServico extends ServicoUsuario<PersonalTrainer> {
         return super.consultarEntidade(new Object[] {id}, PersonalTrainer.CONSULTAR_POR_ID);
     }
 
-    public Object removerPersonalPorID(long id) {
+    public PersonalTrainer removerPersonalPorID(long id) {
         return super.consultarEntidade(new Object[] {id}, PersonalTrainer.REMOVER_POR_ID);
     }
 }

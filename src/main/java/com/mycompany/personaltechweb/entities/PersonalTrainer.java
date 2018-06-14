@@ -37,7 +37,7 @@ import org.hibernate.validator.constraints.NotBlank;
     ),
     @NamedQuery(
             name = PersonalTrainer.REMOVER_POR_ID,
-            query = "DELETE FROM PersonalTrainer pt WHERE pt.id = ?1"
+            query = "DELETE FROM Usuario pt WHERE pt.id = ?1"
     )
 })
 public class PersonalTrainer extends Usuario implements Serializable {

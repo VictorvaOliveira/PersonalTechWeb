@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="0" name="com.mycompany.personaltechweb.PersonalTrainerTest" time="53.563" errors="0" skipped="0">
+<testsuite tests="1" failures="0" name="com.mycompany.personaltechweb.PersonalTrainerTest" time="70.086" errors="1" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64"/>
@@ -13,7 +13,7 @@
     <property name="user.country" value="BR"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value="unknown"/>
-    <property name="test" value="com.mycompany.personaltechweb.PersonalTrainerTest#consultaPorID"/>
+    <property name="test" value="com.mycompany.personaltechweb.PersonalTrainerTest#removerPersonalTrainer"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="user.dir" value="/home/victor/Documentos/PersonalTechWeb"/>
     <property name="java.runtime.version" value="1.8.0_171-8u171-b11-0ubuntu0.16.04.1-b11"/>
@@ -43,7 +43,7 @@
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="/usr/lib/jvm/java-8-openjdk-amd64/jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dtest=com.mycompany.personaltechweb.PersonalTrainerTest#consultaPorID -Dmaven.ext.class.path=/home/victor/netbeans-8.2/java/maven-nblib/netbeans-eventspy.jar surefire:test"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dtest=com.mycompany.personaltechweb.PersonalTrainerTest#removerPersonalTrainer -Dmaven.ext.class.path=/home/victor/netbeans-8.2/java/maven-nblib/netbeans-eventspy.jar surefire:test"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="pt"/>
     <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
@@ -61,5 +61,327 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="com.mycompany.personaltechweb.PersonalTrainerTest" name="consultaPorID" time="0.843"/>
+  <testcase classname="com.mycompany.personaltechweb.PersonalTrainerTest" name="removerPersonalTrainer" time="0.394">
+    <error type="javax.ejb.EJBException">javax.ejb.EJBException
+	at com.sun.ejb.containers.EJBContainerTransactionManager.processSystemException(EJBContainerTransactionManager.java:752)
+	at com.sun.ejb.containers.EJBContainerTransactionManager.completeNewTx(EJBContainerTransactionManager.java:702)
+	at com.sun.ejb.containers.EJBContainerTransactionManager.postInvokeTx(EJBContainerTransactionManager.java:507)
+	at com.sun.ejb.containers.BaseContainer.postInvokeTx(BaseContainer.java:4566)
+	at com.sun.ejb.containers.BaseContainer.postInvoke(BaseContainer.java:2074)
+	at com.sun.ejb.containers.BaseContainer.postInvoke(BaseContainer.java:2044)
+	at com.sun.ejb.containers.EJBLocalObjectInvocationHandler.invoke(EJBLocalObjectInvocationHandler.java:220)
+	at com.sun.ejb.containers.EJBLocalObjectInvocationHandlerDelegate.invoke(EJBLocalObjectInvocationHandlerDelegate.java:88)
+	at com.sun.proxy.$Proxy181.removerPersonalPorID(Unknown Source)
+	at com.mycompany.personaltechweb.services.__EJB31_Generated__PersonalTrainerServico__Intf____Bean__.removerPersonalPorID(Unknown Source)
+	at com.mycompany.personaltechweb.PersonalTrainerTest.removerPersonalTrainer(PersonalTrainerTest.java:51)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:45)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+Caused by: java.lang.IllegalStateException: You cannot call getSingleResult() on this query.  It is the incorrect query type.
+	at org.eclipse.persistence.internal.jpa.QueryImpl.getSingleResult(QueryImpl.java:519)
+	at org.eclipse.persistence.internal.jpa.EJBQueryImpl.getSingleResult(EJBQueryImpl.java:400)
+	at com.mycompany.personaltechweb.services.ServicoUsuario.consultarEntidade(ServicoUsuario.java:75)
+	at com.mycompany.personaltechweb.services.PersonalTrainerServico.removerPersonalPorID(PersonalTrainerServico.java:47)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.glassfish.ejb.security.application.EJBSecurityManager.runMethod(EJBSecurityManager.java:1081)
+	at org.glassfish.ejb.security.application.EJBSecurityManager.invoke(EJBSecurityManager.java:1153)
+	at com.sun.ejb.containers.BaseContainer.invokeBeanMethod(BaseContainer.java:4786)
+	at com.sun.ejb.EjbInvocation.invokeBeanMethod(EjbInvocation.java:656)
+	at com.sun.ejb.containers.interceptors.AroundInvokeChainImpl.invokeNext(InterceptorManager.java:822)
+	at com.sun.ejb.EjbInvocation.proceed(EjbInvocation.java:608)
+	at org.jboss.weld.ejb.AbstractEJBRequestScopeActivationInterceptor.aroundInvoke(AbstractEJBRequestScopeActivationInterceptor.java:73)
+	at org.jboss.weld.ejb.SessionBeanInterceptor.aroundInvoke(SessionBeanInterceptor.java:52)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.sun.ejb.containers.interceptors.AroundInvokeInterceptor.intercept(InterceptorManager.java:883)
+	at com.sun.ejb.containers.interceptors.AroundInvokeChainImpl.invokeNext(InterceptorManager.java:822)
+	at com.sun.ejb.EjbInvocation.proceed(EjbInvocation.java:608)
+	at com.sun.ejb.containers.interceptors.SystemInterceptorProxy.doCall(SystemInterceptorProxy.java:163)
+	at com.sun.ejb.containers.interceptors.SystemInterceptorProxy.aroundInvoke(SystemInterceptorProxy.java:140)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.sun.ejb.containers.interceptors.AroundInvokeInterceptor.intercept(InterceptorManager.java:883)
+	at com.sun.ejb.containers.interceptors.AroundInvokeChainImpl.invokeNext(InterceptorManager.java:822)
+	at com.sun.ejb.containers.interceptors.InterceptorManager.intercept(InterceptorManager.java:369)
+	at com.sun.ejb.containers.BaseContainer.__intercept(BaseContainer.java:4758)
+	at com.sun.ejb.containers.BaseContainer.intercept(BaseContainer.java:4746)
+	at com.sun.ejb.containers.EJBLocalObjectInvocationHandler.invoke(EJBLocalObjectInvocationHandler.java:212)
+	... 37 more
+</error>
+    <system-out>JdbcRuntimeExtension,  getAllSystemRAResourcesAndPools = [GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource]
+[EL Info]: server: 2018-06-14 19:45:15.657--Detected server platform: org.eclipse.persistence.platform.server.NoServerPlatform.
+</system-out>
+    <system-err>jun 14, 2018 7:45:00 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl createContainer
+INFORMAÇÕES: [EJBContainerProviderImpl] Using installation location /home/glassfish-4.1.1/glassfish4/glassfish
+jun 14, 2018 7:45:00 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl createContainer
+INFORMAÇÕES: [EJBContainerProviderImpl] Using config file location: file:/tmp/domain2793677416920366952xml
+jun 14, 2018 7:45:00 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl createContainer
+INFORMAÇÕES: [EJBContainerProviderImpl] Using runtime class: class com.sun.enterprise.glassfish.bootstrap.StaticGlassFishRuntime
+jun 14, 2018 7:45:01 PM com.sun.enterprise.v3.server.CommonClassLoaderServiceImpl findDerbyClient
+INFORMAÇÕES: Cannot find javadb client jar file, derby jdbc driver will not be available by default.
+jun 14, 2018 7:45:02 PM org.hibernate.validator.internal.util.Version &lt;clinit&gt;
+INFO: HV000001: Hibernate Validator 5.1.2.Final
+jun 14, 2018 7:45:02 PM org.glassfish.security.services.impl.authorization.AuthorizationServiceImpl initialize
+INFORMAÇÕES: Authorization Service has successfully initialized.
+jun 14, 2018 7:45:02 PM com.sun.enterprise.security.auth.realm.Realm doInstantiate
+INFORMAÇÕES: Realm [admin-realm] of classtype [com.sun.enterprise.security.auth.realm.file.FileRealm] successfully created.
+jun 14, 2018 7:45:02 PM com.sun.enterprise.security.auth.realm.Realm doInstantiate
+INFORMAÇÕES: Realm [file] of classtype [com.sun.enterprise.security.auth.realm.file.FileRealm] successfully created.
+jun 14, 2018 7:45:02 PM com.sun.enterprise.security.auth.realm.Realm doInstantiate
+INFORMAÇÕES: Realm [certificate] of classtype [com.sun.enterprise.security.auth.realm.certificate.CertificateRealm] successfully created.
+jun 14, 2018 7:45:02 PM org.glassfish.ha.store.spi.BackingStoreFactoryRegistry register
+INFORMAÇÕES: Registered org.glassfish.ha.store.adapter.cache.ShoalBackingStoreProxy for persistence-type = replicated in BackingStoreFactoryRegistry
+jun 14, 2018 7:45:02 PM com.sun.enterprise.v3.server.AppServerStartup postStartupJob
+INFORMAÇÕES: GlassFish Server Open Source Edition  4.1.1  (1) startup time : Embedded (854ms), startup services(860ms), total(1.714ms)
+jun 14, 2018 7:45:02 PM com.sun.jts.CosTransactions.DefaultTransactionService setServerName
+INFORMAÇÕES: JTS5014: Recoverable JTS instance, serverId = [100]
+jun 14, 2018 7:45:03 PM org.glassfish.admin.mbeanserver.JMXStartupService$JMXConnectorsStarterThread run
+INFORMAÇÕES: JMXStartupService has disabled JMXConnector system
+jun 14, 2018 7:45:03 PM org.glassfish.admin.mbeanserver.JMXStartupService shutdown
+INFORMAÇÕES: JMXStartupService and JMXConnectors have been shut down.
+jun 14, 2018 7:45:03 PM com.sun.enterprise.v3.server.AppServerStartup stop
+INFORMAÇÕES: Shutdown procedure finished
+jun 14, 2018 7:45:03 PM org.glassfish.ha.store.spi.BackingStoreFactoryRegistry register
+INFORMAÇÕES: Registered org.glassfish.ha.store.adapter.cache.ShoalBackingStoreProxy for persistence-type = replicated in BackingStoreFactoryRegistry
+jun 14, 2018 7:45:03 PM com.sun.enterprise.v3.server.AppServerStartup postStartupJob
+INFORMAÇÕES: GlassFish Server Open Source Edition  4.1.1  (1) startup time : Embedded (2.770ms), startup services(16ms), total(2.786ms)
+jun 14, 2018 7:45:03 PM org.glassfish.admin.mbeanserver.JMXStartupService$JMXConnectorsStarterThread run
+INFORMAÇÕES: JMXStartupService has disabled JMXConnector system
+jun 14, 2018 7:45:03 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
+INFORMAÇÕES: ... skipping entry with a Manifest file with a special attribute: glassfish-embedded-static-shell.jar
+jun 14, 2018 7:45:04 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
+INFORMAÇÕES: ... skipping entry with a Manifest file with a special attribute: org.eclipse.persistence.jpa.modelgen.processor-2.5.2.jar
+jun 14, 2018 7:45:04 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
+INFORMAÇÕES: ... skipping entry with a Manifest file with a special attribute: org.eclipse.persistence.core-2.5.2.jar
+jun 14, 2018 7:45:04 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
+INFORMAÇÕES: ... skipping entry with a Manifest file with a special attribute: org.eclipse.persistence.asm-2.5.2.jar
+jun 14, 2018 7:45:04 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
+INFORMAÇÕES: ... skipping entry with a Manifest file with a special attribute: org.eclipse.persistence.jpa-2.5.2.jar
+jun 14, 2018 7:45:04 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
+INFORMAÇÕES: ... skipping entry with a Manifest file with a special attribute: org.eclipse.persistence.antlr-2.5.2.jar
+jun 14, 2018 7:45:04 PM org.glassfish.ejb.embedded.EJBContainerProviderImpl skipJar
+INFORMAÇÕES: ... skipping entry with a Manifest file with a special attribute: org.eclipse.persistence.jpa.jpql-2.5.2.jar
+jun 14, 2018 7:45:04 PM org.glassfish.ejb.embedded.DeploymentElement getOrCreateApplication
+INFORMAÇÕES: [DeploymentElement] adding EJB module to ScatteredArchive classes
+jun 14, 2018 7:45:04 PM org.glassfish.ejb.embedded.DeploymentElement getOrCreateApplication
+INFORMAÇÕES: [DeploymentElement] adding library to ScatteredArchive classmate-1.3.1.jar
+jun 14, 2018 7:45:04 PM org.glassfish.ejb.embedded.DeploymentElement getOrCreateApplication
+INFORMAÇÕES: [DeploymentElement] adding library to ScatteredArchive eclipselink-2.5.2.jar
+jun 14, 2018 7:45:04 PM org.glassfish.ejb.embedded.DeploymentElement getOrCreateApplication
+INFORMAÇÕES: [DeploymentElement] adding library to ScatteredArchive jboss-logging-3.3.0.Final.jar
+jun 14, 2018 7:45:04 PM org.glassfish.ejb.embedded.DeploymentElement getOrCreateApplication
+INFORMAÇÕES: [DeploymentElement] adding library to ScatteredArchive poi-3.14.jar
+jun 14, 2018 7:45:04 PM org.glassfish.ejb.embedded.DeploymentElement getOrCreateApplication
+INFORMAÇÕES: [DeploymentElement] adding library to ScatteredArchive poi-ooxml-schemas-3.14.jar
+jun 14, 2018 7:45:04 PM org.glassfish.ejb.embedded.DeploymentElement getOrCreateApplication
+INFORMAÇÕES: [DeploymentElement] adding library to ScatteredArchive hibernate-validator-5.4.2.Final.jar
+jun 14, 2018 7:45:04 PM org.glassfish.ejb.embedded.DeploymentElement getOrCreateApplication
+INFORMAÇÕES: [DeploymentElement] adding library to ScatteredArchive mysql-connector-java-5.1.34.jar
+jun 14, 2018 7:45:04 PM org.glassfish.ejb.embedded.DeploymentElement getOrCreateApplication
+INFORMAÇÕES: [DeploymentElement] adding library to ScatteredArchive slf4j-api-1.7.21.jar
+jun 14, 2018 7:45:04 PM org.glassfish.ejb.embedded.DeploymentElement getOrCreateApplication
+INFORMAÇÕES: [DeploymentElement] adding library to ScatteredArchive hamcrest-core-1.3.jar
+jun 14, 2018 7:45:04 PM org.glassfish.ejb.embedded.DeploymentElement getOrCreateApplication
+INFORMAÇÕES: [DeploymentElement] adding library to ScatteredArchive javax.persistence-2.1.0.jar
+jun 14, 2018 7:45:04 PM org.glassfish.ejb.embedded.DeploymentElement getOrCreateApplication
+INFORMAÇÕES: [DeploymentElement] adding library to ScatteredArchive xmlbeans-2.6.0.jar
+jun 14, 2018 7:45:04 PM org.glassfish.ejb.embedded.DeploymentElement getOrCreateApplication
+INFORMAÇÕES: [DeploymentElement] adding library to ScatteredArchive curvesapi-1.03.jar
+jun 14, 2018 7:45:04 PM org.glassfish.ejb.embedded.DeploymentElement getOrCreateApplication
+INFORMAÇÕES: [DeploymentElement] adding library to ScatteredArchive commons-collections-3.2.2.jar
+jun 14, 2018 7:45:04 PM org.glassfish.ejb.embedded.DeploymentElement getOrCreateApplication
+INFORMAÇÕES: [DeploymentElement] adding library to ScatteredArchive javaee-web-api-7.0.jar
+jun 14, 2018 7:45:04 PM org.glassfish.ejb.embedded.DeploymentElement getOrCreateApplication
+INFORMAÇÕES: [DeploymentElement] adding library to ScatteredArchive dbunit-2.5.3.jar
+jun 14, 2018 7:45:04 PM org.glassfish.ejb.embedded.DeploymentElement getOrCreateApplication
+INFORMAÇÕES: [DeploymentElement] adding library to ScatteredArchive stax-api-1.0.1.jar
+jun 14, 2018 7:45:04 PM org.glassfish.ejb.embedded.DeploymentElement getOrCreateApplication
+INFORMAÇÕES: [DeploymentElement] adding library to ScatteredArchive test-classes
+jun 14, 2018 7:45:04 PM org.glassfish.ejb.embedded.DeploymentElement getOrCreateApplication
+INFORMAÇÕES: [DeploymentElement] adding library to ScatteredArchive junit-4.11.jar
+jun 14, 2018 7:45:04 PM org.glassfish.ejb.embedded.DeploymentElement getOrCreateApplication
+INFORMAÇÕES: [DeploymentElement] adding library to ScatteredArchive commons-codec-1.10.jar
+jun 14, 2018 7:45:04 PM org.glassfish.ejb.embedded.DeploymentElement getOrCreateApplication
+INFORMAÇÕES: [DeploymentElement] adding library to ScatteredArchive validation-api-1.1.0.Final.jar
+jun 14, 2018 7:45:04 PM org.glassfish.ejb.embedded.DeploymentElement getOrCreateApplication
+INFORMAÇÕES: [DeploymentElement] adding library to ScatteredArchive commonj.sdo-2.1.1.jar
+jun 14, 2018 7:45:04 PM org.glassfish.ejb.embedded.DeploymentElement getOrCreateApplication
+INFORMAÇÕES: [DeploymentElement] adding library to ScatteredArchive poi-ooxml-3.14.jar
+jun 14, 2018 7:45:04 PM org.glassfish.ejb.embedded.EJBContainerImpl deploy
+INFORMAÇÕES: [EJBContainerImpl] Deploying app: org.glassfish.embeddable.archive.ScatteredArchive@72f112d1
+jun 14, 2018 7:45:04 PM org.glassfish.ejb.embedded.EJBContainerImpl deploy
+INFORMAÇÕES: [EJBContainerImpl] GlassFish status: STARTED
+jun 14, 2018 7:45:04 PM org.glassfish.ejb.embedded.EJBContainerImpl deploy
+INFORMAÇÕES: [EJBContainerImpl] Deploying as a ScatteredArchive
+jun 14, 2018 7:45:14 PM com.sun.enterprise.security.SecurityLifecycle &lt;init&gt;
+INFORMAÇÕES: Java security manager is disabled.
+jun 14, 2018 7:45:14 PM com.sun.enterprise.security.SecurityLifecycle onInitialization
+INFORMAÇÕES: Entering Security Startup Service.
+jun 14, 2018 7:45:14 PM com.sun.enterprise.security.PolicyLoader loadPolicy
+INFORMAÇÕES: Loading policy provider com.sun.enterprise.security.provider.PolicyWrapper.
+jun 14, 2018 7:45:14 PM com.sun.enterprise.security.SecurityLifecycle onInitialization
+INFORMAÇÕES: Security Service(s) started successfully.
+jun 14, 2018 7:45:21 PM org.eclipse.persistence.default
+INFORMAÇÕES: Detected server platform: org.eclipse.persistence.platform.server.NoServerPlatform.
+jun 14, 2018 7:45:21 PM org.eclipse.persistence.session./file:/tmp/gfembed4406022876570416524tmp/applications/classes/_PersonalTechWebPU
+INFORMAÇÕES: EclipseLink, version: Eclipse Persistence Services - 2.6.1.v20150605-31e8258
+jun 14, 2018 7:45:22 PM org.eclipse.persistence.session./file:/tmp/gfembed4406022876570416524tmp/applications/classes/_PersonalTechWebPU.metadata
+ADVERTÊNCIA: Reverting the lazy setting on the OneToOne or ManyToOne attribute [aluno] for the entity class [class com.mycompany.personaltechweb.entities.Avaliacao] since weaving was not enabled or did not occur.
+jun 14, 2018 7:45:22 PM org.eclipse.persistence.session./file:/tmp/gfembed4406022876570416524tmp/applications/classes/_PersonalTechWebPU.metadata
+ADVERTÊNCIA: Reverting the lazy setting on the OneToOne or ManyToOne attribute [pergunta] for the entity class [class com.mycompany.personaltechweb.entities.RespostasAvaliacao] since weaving was not enabled or did not occur.
+jun 14, 2018 7:45:22 PM org.eclipse.persistence.session./file:/tmp/gfembed4406022876570416524tmp/applications/classes/_PersonalTechWebPU.metadata
+ADVERTÊNCIA: Reverting the lazy setting on the OneToOne or ManyToOne attribute [avaliacao] for the entity class [class com.mycompany.personaltechweb.entities.RespostasAvaliacao] since weaving was not enabled or did not occur.
+jun 14, 2018 7:45:22 PM org.eclipse.persistence.session./file:/tmp/gfembed4406022876570416524tmp/applications/classes/_PersonalTechWebPU.connection
+INFORMAÇÕES: /file:/tmp/gfembed4406022876570416524tmp/applications/classes/_PersonalTechWebPU login successful
+jun 14, 2018 7:45:22 PM org.eclipse.persistence.session./file:/tmp/gfembed4406022876570416524tmp/applications/classes/_PersonalTechWebPU.server
+ADVERTÊNCIA: Failed to find MBean Server: null or empty List returned from MBeanServerFactory.findMBeanServer(null)
+jun 14, 2018 7:45:54 PM com.sun.ejb.containers.BaseContainer initializeHome
+INFORMAÇÕES: Portable JNDI names for EJB ejb/PersonalTrainerServico: [java:global/classes/ejb/PersonalTrainerServico!com.mycompany.personaltechweb.services.PersonalTrainerServico, java:global/classes/ejb/PersonalTrainerServico]
+jun 14, 2018 7:45:55 PM com.sun.ejb.containers.BaseContainer initializeHome
+INFORMAÇÕES: Portable JNDI names for EJB ejb/AlunoServico: [java:global/classes/ejb/AlunoServico, java:global/classes/ejb/AlunoServico!com.mycompany.personaltechweb.services.AlunoServico]
+jun 14, 2018 7:45:55 PM org.jboss.weld.bootstrap.WeldStartup &lt;clinit&gt;
+INFO: WELD-000900: 2.2.13 (Final)
+jun 14, 2018 7:45:58 PM org.jboss.weld.event.ExtensionObserverMethodImpl checkRequiredTypeAnnotations
+WARN: WELD-000411: Observer method [BackedAnnotatedMethod] public org.glassfish.jms.injection.JMSCDIExtension.processAnnotatedType(@Observes ProcessAnnotatedType&lt;Object&gt;) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.
+jun 14, 2018 7:45:58 PM org.jboss.weld.event.ExtensionObserverMethodImpl checkRequiredTypeAnnotations
+WARN: WELD-000411: Observer method [BackedAnnotatedMethod] private org.glassfish.jersey.ext.cdi1x.internal.CdiComponentProvider.processAnnotatedType(@Observes ProcessAnnotatedType&lt;Object&gt;) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.
+jun 14, 2018 7:45:58 PM org.jboss.weld.event.ExtensionObserverMethodImpl checkRequiredTypeAnnotations
+WARN: WELD-000411: Observer method [BackedAnnotatedMethod] org.glassfish.sse.impl.ServerSentEventCdiExtension.processAnnotatedType(@Observes ProcessAnnotatedType&lt;Object&gt;, BeanManager) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.
+jun 14, 2018 7:45:58 PM org.jboss.weld.event.ExtensionObserverMethodImpl checkRequiredTypeAnnotations
+WARN: WELD-000411: Observer method [BackedAnnotatedMethod] org.glassfish.sse.impl.ServerSentEventCdiExtension.processAnnotatedType(@Observes ProcessAnnotatedType&lt;Object&gt;, BeanManager) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.
+jun 14, 2018 7:45:58 PM org.jboss.weld.event.ExtensionObserverMethodImpl checkRequiredTypeAnnotations
+WARN: WELD-000411: Observer method [BackedAnnotatedMethod] public org.glassfish.jms.injection.JMSCDIExtension.processAnnotatedType(@Observes ProcessAnnotatedType&lt;Object&gt;) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.
+jun 14, 2018 7:45:58 PM org.jboss.weld.event.ExtensionObserverMethodImpl checkRequiredTypeAnnotations
+WARN: WELD-000411: Observer method [BackedAnnotatedMethod] private org.glassfish.jersey.ext.cdi1x.internal.CdiComponentProvider.processAnnotatedType(@Observes ProcessAnnotatedType&lt;Object&gt;) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.
+jun 14, 2018 7:46:00 PM org.glassfish.deployment.admin.DeployCommand execute
+INFORMAÇÕES: classes was successfully deployed in 50.800 milliseconds.
+SLF4J: Failed to load class &quot;org.slf4j.impl.StaticLoggerBinder&quot;.
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+jun 14, 2018 7:46:09 PM com.sun.ejb.containers.BaseContainer postInvoke
+ADVERTÊNCIA: A system exception occurred during an invocation on EJB ejb/PersonalTrainerServico, method: public com.mycompany.personaltechweb.entities.PersonalTrainer com.mycompany.personaltechweb.services.PersonalTrainerServico.removerPersonalPorID(long)
+jun 14, 2018 7:46:09 PM com.sun.ejb.containers.BaseContainer postInvoke
+ADVERTÊNCIA: 
+javax.ejb.EJBException
+	at com.sun.ejb.containers.EJBContainerTransactionManager.processSystemException(EJBContainerTransactionManager.java:752)
+	at com.sun.ejb.containers.EJBContainerTransactionManager.completeNewTx(EJBContainerTransactionManager.java:702)
+	at com.sun.ejb.containers.EJBContainerTransactionManager.postInvokeTx(EJBContainerTransactionManager.java:507)
+	at com.sun.ejb.containers.BaseContainer.postInvokeTx(BaseContainer.java:4566)
+	at com.sun.ejb.containers.BaseContainer.postInvoke(BaseContainer.java:2074)
+	at com.sun.ejb.containers.BaseContainer.postInvoke(BaseContainer.java:2044)
+	at com.sun.ejb.containers.EJBLocalObjectInvocationHandler.invoke(EJBLocalObjectInvocationHandler.java:220)
+	at com.sun.ejb.containers.EJBLocalObjectInvocationHandlerDelegate.invoke(EJBLocalObjectInvocationHandlerDelegate.java:88)
+	at com.sun.proxy.$Proxy181.removerPersonalPorID(Unknown Source)
+	at com.mycompany.personaltechweb.services.__EJB31_Generated__PersonalTrainerServico__Intf____Bean__.removerPersonalPorID(Unknown Source)
+	at com.mycompany.personaltechweb.PersonalTrainerTest.removerPersonalTrainer(PersonalTrainerTest.java:51)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:45)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+Caused by: java.lang.IllegalStateException: You cannot call getSingleResult() on this query.  It is the incorrect query type.
+	at org.eclipse.persistence.internal.jpa.QueryImpl.getSingleResult(QueryImpl.java:519)
+	at org.eclipse.persistence.internal.jpa.EJBQueryImpl.getSingleResult(EJBQueryImpl.java:400)
+	at com.mycompany.personaltechweb.services.ServicoUsuario.consultarEntidade(ServicoUsuario.java:75)
+	at com.mycompany.personaltechweb.services.PersonalTrainerServico.removerPersonalPorID(PersonalTrainerServico.java:47)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.glassfish.ejb.security.application.EJBSecurityManager.runMethod(EJBSecurityManager.java:1081)
+	at org.glassfish.ejb.security.application.EJBSecurityManager.invoke(EJBSecurityManager.java:1153)
+	at com.sun.ejb.containers.BaseContainer.invokeBeanMethod(BaseContainer.java:4786)
+	at com.sun.ejb.EjbInvocation.invokeBeanMethod(EjbInvocation.java:656)
+	at com.sun.ejb.containers.interceptors.AroundInvokeChainImpl.invokeNext(InterceptorManager.java:822)
+	at com.sun.ejb.EjbInvocation.proceed(EjbInvocation.java:608)
+	at org.jboss.weld.ejb.AbstractEJBRequestScopeActivationInterceptor.aroundInvoke(AbstractEJBRequestScopeActivationInterceptor.java:73)
+	at org.jboss.weld.ejb.SessionBeanInterceptor.aroundInvoke(SessionBeanInterceptor.java:52)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.sun.ejb.containers.interceptors.AroundInvokeInterceptor.intercept(InterceptorManager.java:883)
+	at com.sun.ejb.containers.interceptors.AroundInvokeChainImpl.invokeNext(InterceptorManager.java:822)
+	at com.sun.ejb.EjbInvocation.proceed(EjbInvocation.java:608)
+	at com.sun.ejb.containers.interceptors.SystemInterceptorProxy.doCall(SystemInterceptorProxy.java:163)
+	at com.sun.ejb.containers.interceptors.SystemInterceptorProxy.aroundInvoke(SystemInterceptorProxy.java:140)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.sun.ejb.containers.interceptors.AroundInvokeInterceptor.intercept(InterceptorManager.java:883)
+	at com.sun.ejb.containers.interceptors.AroundInvokeChainImpl.invokeNext(InterceptorManager.java:822)
+	at com.sun.ejb.containers.interceptors.InterceptorManager.intercept(InterceptorManager.java:369)
+	at com.sun.ejb.containers.BaseContainer.__intercept(BaseContainer.java:4758)
+	at com.sun.ejb.containers.BaseContainer.intercept(BaseContainer.java:4746)
+	at com.sun.ejb.containers.EJBLocalObjectInvocationHandler.invoke(EJBLocalObjectInvocationHandler.java:212)
+	... 37 more
+
+</system-err>
+  </testcase>
 </testsuite>
