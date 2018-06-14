@@ -5,35 +5,37 @@
  */
 package com.mycompany.personaltechweb;
 
+import static com.mycompany.personaltechweb.Teste.container;
 import com.mycompany.personaltechweb.entities.Aluno;
 import static com.mycompany.personaltechweb.entities.Aluno_.telefones;
+import com.mycompany.personaltechweb.entities.Avaliacao;
 import com.mycompany.personaltechweb.entities.Usuario;
 import com.mycompany.personaltechweb.services.AlunoServico;
+import com.mycompany.personaltechweb.services.AvaliacaoServico;
 import java.util.Collection;
 import javax.naming.NamingException;
 import org.junit.After;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
 
 /**
  *
- * @author john
+ * @author michel
  */
-public class AlunoTest extends Teste {
-    private AlunoServico alunoServico;
+public class AvaliacaoTest extends Teste {
+    private AvaliacaoServico AvaliacaoServico;
     
     
      @Before
     public void setUp() throws NamingException {
-        alunoServico = (AlunoServico) container.getContext().lookup("java:global/classes/ejb/AlunoServico!com.mycompany.personaltechweb.services.AlunoServico");
+        AvaliacaoServico = (AvaliacaoServico) container.getContext().lookup("java:global/classes/ejb/AvaliacaoServico!com.mycompany.personaltechweb.services.AvaliacaoServico");
     }
     
     @After
     public void tearDown() {
-        alunoServico = null;
+        AvaliacaoServico = null;
     }
     
     @Test
@@ -41,17 +43,9 @@ public class AlunoTest extends Teste {
     }
     
     @Test
-    public void existeAluno() {
-        Aluno aluno = alunoServico.criar();
-        
-        aluno.setCpf("456.636.524-77");
-        
-        assertTrue(alunoServico.existe(aluno));
-        
-    }
-    
-    @Test
-    public void getAlunoPorCPF() {
-        assertNotNull(alunoServico.consultarPorCPF("456.636.524-77"));
+    public void existeAvaliacao() {
+        Avaliacao avaliacao = AvaliacaoServico.criar();
+        avaliacao.setNome_personal("THOR");
+        assertTrue(AvaliacaoServico.existe(avaliacao));
     }
 }
