@@ -13,6 +13,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.Table;
@@ -24,8 +26,16 @@ import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
 @Table(name = "TB_AVALIACAO")
+@NamedQueries(
+        {
+            @NamedQuery(
+                    name = Avaliacao.AVALIACAO,
+                    query = "SELECT a FROM Avaliacao a WHERE a.nome_personal LIKE ?1"
+            )
+        }
+)
 public class Avaliacao implements Serializable {
-
+public static final String AVALIACAO = "Avaliacao";
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

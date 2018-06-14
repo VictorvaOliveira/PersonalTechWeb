@@ -33,11 +33,15 @@ import javax.validation.constraints.Size;
                 @NamedQuery(
                     name = "Aluno.PorTipoDeExercicio",
                     query = "SELECT DISTINCT a FROM Aluno a JOIN a.exercicios xs WHERE xs.tipo = :ex"
+            ),
+            @NamedQuery(
+                    name = Aluno.ALUNO_POR_CPF,
+                    query = "SELECT a FROM Aluno a WHERE a.cpf IS NOT NULL AND a.cpf LIKE ?1"
             )
         }
 )
 public class Aluno extends Usuario implements Serializable {
-
+public static final String ALUNO_POR_CPF = "AlunoPorCPF";
     @Size(max = 5)
     @ElementCollection
     @CollectionTable(name = "TB_TELEFONE_ALUNO",

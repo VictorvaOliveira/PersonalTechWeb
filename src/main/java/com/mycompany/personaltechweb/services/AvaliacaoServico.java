@@ -1,11 +1,18 @@
+package com.mycompany.personaltechweb.services;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.personaltechweb.services;
+
 
 import com.mycompany.personaltechweb.entities.Aluno;
+import com.mycompany.personaltechweb.entities.Avaliacao;
+import com.mycompany.personaltechweb.entities.Usuario;
+import com.mycompany.personaltechweb.services.ServicoUsuario;
+import java.util.List;
+import javax.annotation.PostConstruct;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
@@ -14,33 +21,33 @@ import javax.persistence.TypedQuery;
 import javax.validation.constraints.NotNull;
 import javax.validation.executable.ExecutableType;
 import javax.validation.executable.ValidateOnExecution;
+import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.br.CPF;
 
 /**
  *
- * @author john
+ * @author michel
  */
-@Stateless(name = "ejb/AlunoServico")
+@Stateless(name = "ejb/AvaliacaoServico")
 @LocalBean
 @ValidateOnExecution(type = ExecutableType.ALL)
-public class AlunoServico extends ServicoUsuario<Aluno>{
+public class AvaliacaoServico extends ServicoAvaliacao<Avaliacao>{
 
     @Override
-    public Aluno criar() {
-        return new Aluno();
+    public Avaliacao criar() {
+        return new Avaliacao();
     }
     
     @Override
-    public boolean existe(@NotNull Aluno usuario) {
-        TypedQuery<Aluno> query
-                = entityManager.createNamedQuery(Aluno.ALUNO_POR_CPF, classe);
-        query.setParameter(1, usuario.getCpf());
+    public boolean existe(@NotNull Avaliacao avaliacao) {
+        TypedQuery<Avaliacao> query
+                = entityManager.createNamedQuery(Avaliacao.AVALIACAO, classe);
+        query.setParameter(1, avaliacao.getNome_personal());
         return !query.getResultList().isEmpty();
     }
     
-    @TransactionAttribute(SUPPORTS)
-    public Aluno consultarPorCPF(@CPF String cpf) {
-        return super.consultarEntidade(new Object[] {cpf}, Aluno.ALUNO_POR_CPF);
-    } 
+    
+    
+    
     
 }
