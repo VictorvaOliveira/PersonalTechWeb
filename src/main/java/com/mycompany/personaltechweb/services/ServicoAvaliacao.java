@@ -6,7 +6,6 @@
 package com.mycompany.personaltechweb.services;
 
 import com.mycompany.personaltechweb.entities.Avaliacao;
-import com.mycompany.personaltechweb.entities.Usuario;
 
 import static javax.ejb.TransactionAttributeType.REQUIRED;
 import static javax.ejb.TransactionAttributeType.SUPPORTS;
