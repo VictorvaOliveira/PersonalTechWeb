@@ -6,6 +6,7 @@
 package com.mycompany.personaltechweb.services;
 
 import com.mycompany.personaltechweb.entities.Aluno;
+import com.mycompany.personaltechweb.entities.TipoExercicio;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
@@ -43,4 +44,13 @@ public class AlunoServico extends ServicoUsuario<Aluno>{
         return super.consultarEntidade(new Object[] {cpf}, Aluno.ALUNO_POR_CPF);
     } 
     
+    @TransactionAttribute(SUPPORTS)
+    public Object consultarPorNome(String nome) {
+       return super.consultarEntidades(new Object[] {nome}, "Aluno.PorNome"); 
+    }
+    
+    @TransactionAttribute(SUPPORTS)
+    public Object consultarPorTipoExercicio(TipoExercicio tipoExercicio) {
+        return super.consultarEntidades(new Object[] {tipoExercicio}, "Aluno.PorTipoDeExercicio"); 
+    }
 }

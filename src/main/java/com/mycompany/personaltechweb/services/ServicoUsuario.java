@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package com.mycompany.personaltechweb.services;
+
 import com.mycompany.personaltechweb.entities.Usuario;
 
 import static javax.ejb.TransactionAttributeType.REQUIRED;
@@ -28,41 +29,42 @@ import javax.validation.constraints.NotNull;
 @TransactionManagement(CONTAINER)
 @TransactionAttribute(REQUIRED)
 public abstract class ServicoUsuario<T extends Usuario> {
+
     @PersistenceContext(name = "usuario_ejb", type = TRANSACTION)
     protected EntityManager entityManager;
     protected Class<T> classe;
-    
+
     @TransactionAttribute(NOT_SUPPORTED)
     protected void setClasse(@NotNull Class<T> classe) {
         this.classe = classe;
     }
-    
+
     @TransactionAttribute(SUPPORTS)
     public abstract T criar();
-    
+
     @TransactionAttribute(SUPPORTS)
     public boolean existe(@NotNull T entidade) {
         return true;
     }
-    
+
     public void persistir(@Valid T entidade) {
-        if (!existe(entidade)) {
+        if (existe(entidade)) {
             entityManager.persist(entidade);
         }
     }
-    
+
     public void atualizar(@Valid T entidade) {
         if (existe(entidade)) {
             entityManager.merge(entidade);
             entityManager.flush();
         }
     }
-    
+
     @TransactionAttribute(SUPPORTS)
     public T consultarPorId(@NotNull Long id) {
         return entityManager.find(classe, id);
     }
-    
+
     @TransactionAttribute(SUPPORTS)
     protected T consultarEntidade(Object[] parametros, String nomeQuery) {
         TypedQuery<T> query = entityManager.createNamedQuery(nomeQuery, classe);
@@ -74,7 +76,7 @@ public abstract class ServicoUsuario<T extends Usuario> {
 
         return query.getSingleResult();
     }
-    
+
     @TransactionAttribute(SUPPORTS)
     protected List<T> consultarEntidades(Object[] parametros, String nomeQuery) {
         TypedQuery<T> query = entityManager.createNamedQuery(nomeQuery, classe);

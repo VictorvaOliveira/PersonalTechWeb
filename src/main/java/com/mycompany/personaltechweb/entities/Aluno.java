@@ -28,11 +28,11 @@ import javax.validation.constraints.Size;
         {
             @NamedQuery(
                     name = "Aluno.PorNome",
-                    query = "SELECT a FROM Aluno a WHERE a.nome LIKE :nome ORDER BY a.id"
+                    query = "SELECT a FROM Aluno a WHERE a.nome LIKE ?1 ORDER BY a.id"
             ),
                 @NamedQuery(
                     name = "Aluno.PorTipoDeExercicio",
-                    query = "SELECT DISTINCT a FROM Aluno a JOIN a.exercicios xs WHERE xs.tipo = :ex"
+                    query = "SELECT DISTINCT a FROM Aluno a JOIN a.exercicios xs WHERE xs.tipo = ?1"
             ),
             @NamedQuery(
                     name = Aluno.ALUNO_POR_CPF,

@@ -7,8 +7,10 @@ package com.mycompany.personaltechweb;
 
 //import com.mycompany.personaltechweb.entities.Endereco;
 //import com.mycompany.personaltechweb.entities.PersonalTrainer;
+import com.mycompany.personaltechweb.entities.Endereco;
 import com.mycompany.personaltechweb.entities.PersonalTrainer;
 import com.mycompany.personaltechweb.services.PersonalTrainerServico;
+import java.util.Calendar;
 //import java.util.Calendar;
 import javax.naming.NamingException;
 import org.junit.After;
@@ -53,34 +55,34 @@ public class PersonalTrainerTest extends Teste {
     
 //    NÃO ESTÁ PERSISTINDO O PERSONAL TRAINER
 //    CORRIGIR URGENTE
-//    @Test
-//    public void adicionarPersonalTrainer() {
-//        PersonalTrainer pt = PersonalTrainerServico.criar();
-//        pt.setNome("EJB");
-//        pt.setSobrenome("DESCORP");
-//        pt.setSexo("M");
-//        pt.setLogin("javabeans");
-//        pt.setSenha("EJB-123-ejb");
-//        pt.setCpf("866.036.024-90");
-//        
-//        Calendar c = Calendar.getInstance();
-//        c.set(Calendar.YEAR, 1990);
-//        c.set(Calendar.MONTH, Calendar.JULY);
-//        c.set(Calendar.DAY_OF_MONTH, 24);
-//
-//        pt.setDataNascimento(c.getTime());
-//        pt.setEmail("ejb@descorp.com");
-//        Endereco end = new Endereco();
-//        end.setLogradouro("Miramar");
-//        end.setBairro("Miro");
-//        end.setNumero(765);
-//        end.setCep("123123");
-//        end.setCidade("Recife");
-//        end.setEstado("PE");
-//
-//        pt.setEndereco(end);
-//        
-//        PersonalTrainerServico.persistir(pt);
-//        assertNotNull(pt.getId());
-//    }
+    @Test
+    public void adicionarPersonalTrainer() {
+        PersonalTrainer pt = PersonalTrainerServico.criar();
+        pt.setNome("APROVA");
+        pt.setSobrenome("DiBALA");
+        pt.setSexo("M");
+        pt.setLogin("bala666");
+        pt.setSenha("aA1-personal");
+        pt.setCpf("975.989.880-21");
+        pt.setEmail("ejb@descorp.com");
+        
+        Calendar c = Calendar.getInstance();
+        c.set(Calendar.YEAR, 1990);
+        c.set(Calendar.MONTH, Calendar.JULY);
+        c.set(Calendar.DAY_OF_MONTH, 24);
+        pt.setDataNascimento(c.getTime());
+        
+        Endereco end = new Endereco();
+        end.setLogradouro("Miramar");
+        end.setBairro("Miro");
+        end.setNumero(765);
+        end.setCep("123123");
+        end.setCidade("Recife");
+        end.setEstado("PE");
+        pt.setEndereco(end);
+        
+        PersonalTrainerServico.persistir(pt);
+        assertTrue(PersonalTrainerServico.existe(pt));
+//        assertNotNull(pt);
+    }
 }

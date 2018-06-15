@@ -33,10 +33,6 @@ public class AvaliacaoTest extends Teste {
     }
     
     @Test
-    public void consultarItensPorCategoria() {
-    }
-    
-    @Test
     public void existeAvaliacao() {
         Avaliacao avaliacao = AvaliacaoServico.criar();
         avaliacao.setNome_personal("THOR");
