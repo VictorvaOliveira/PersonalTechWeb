@@ -6,6 +6,7 @@
 /home/john/NetBeansProjects/PersonalTechWeb/src/main/java/com/mycompany/personaltechweb/entities/Endereco.java
 /home/john/NetBeansProjects/PersonalTechWeb/src/main/java/com/mycompany/personaltechweb/entities/Usuario.java
 /home/john/NetBeansProjects/PersonalTechWeb/src/main/java/com/mycompany/personaltechweb/entities/Pergunta.java
+/home/john/NetBeansProjects/PersonalTechWeb/src/main/java/com/mycompany/personaltechweb/beans/AlunoBean.java
 /home/john/NetBeansProjects/PersonalTechWeb/src/main/java/com/mycompany/personaltechweb/services/ServicoUsuario.java
 /home/john/NetBeansProjects/PersonalTechWeb/src/main/java/com/mycompany/personaltechweb/entities/RespostasAvaliacao.java
 /home/john/NetBeansProjects/PersonalTechWeb/src/main/java/com/mycompany/personaltechweb/services/PersonalTrainerServico.java
@@ -13,5 +14,6 @@
 /home/john/NetBeansProjects/PersonalTechWeb/src/main/java/com/mycompany/personaltechweb/entities/NomeExercicio.java
 /home/john/NetBeansProjects/PersonalTechWeb/src/main/java/com/mycompany/personaltechweb/entities/TipoExercicio.java
 /home/john/NetBeansProjects/PersonalTechWeb/src/main/java/com/mycompany/personaltechweb/validators/ValidaSexo.java
+/home/john/NetBeansProjects/PersonalTechWeb/src/main/java/com/mycompany/personaltechweb/beans/Bean.java
 /home/john/NetBeansProjects/PersonalTechWeb/src/main/java/com/mycompany/personaltechweb/services/AvaliacaoServico.java
 /home/john/NetBeansProjects/PersonalTechWeb/src/main/java/com/mycompany/personaltechweb/entities/Exercicio.java

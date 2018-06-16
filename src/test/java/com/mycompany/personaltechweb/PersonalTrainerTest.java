@@ -38,7 +38,7 @@ public class PersonalTrainerTest extends Teste {
 
     @Test
     public void quantidadePersonalTrainer() {
-        assertEquals(6, PersonalTrainerServico.quantidadePersonalTrainer().size());
+        assertEquals(7, PersonalTrainerServico.quantidadePersonalTrainer().size());
     }
 
     @Test
