@@ -11,6 +11,8 @@ import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.validation.executable.ExecutableType;
 import javax.validation.executable.ValidateOnExecution;
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
 
 /**
  *
@@ -42,8 +44,13 @@ public class PersonalTrainerServico extends ServicoUsuario<PersonalTrainer> {
     public PersonalTrainer consultaPorID(long id){
         return super.consultarEntidade(new Object[] {id}, PersonalTrainer.CONSULTAR_POR_ID);
     }
-
+//  NÃO FUNCIONA DOWN
     public PersonalTrainer removerPersonalPorID(long id) {
         return super.consultarEntidade(new Object[] {id}, PersonalTrainer.REMOVER_POR_ID);
     }
+    public void remover(PersonalTrainer pt) {
+        entityManager.remove(pt);
+        entityManager.flush();
+    }
+//  NÃO FUNCIONA UP
 }

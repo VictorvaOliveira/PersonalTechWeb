@@ -74,7 +74,7 @@ public abstract class ServicoUsuario<T extends Usuario> {
     }
 
     @TransactionAttribute(SUPPORTS)
-    protected T consultarEntidade(Object[] parametros, String nomeQuery) {
+    protected T consultarEntidade(@NotNull Object[] parametros, String nomeQuery) {
         TypedQuery<T> query = entityManager.createNamedQuery(nomeQuery, classe);
 
         int i = 1;

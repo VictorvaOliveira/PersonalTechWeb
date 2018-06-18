@@ -13,6 +13,8 @@ import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
+import javax.persistence.NamedNativeQueries;
+import javax.persistence.NamedNativeQuery;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
@@ -27,25 +29,22 @@ import org.hibernate.validator.constraints.NotBlank;
 @PrimaryKeyJoinColumn(name = "ID_USUARIO", referencedColumnName = "ID")
 @NamedQueries({
     @NamedQuery(
-            name = PersonalTrainer.QUANTIDADE_PERSONAL_TRAINER,
+            name  = PersonalTrainer.QUANTIDADE_PERSONAL_TRAINER,
             query = "SELECT pt FROM PersonalTrainer pt"
-    )
-    ,
-    @NamedQuery(
-            name = PersonalTrainer.CONSULTAR_POR_ID,
-            query = "SELECT pt FROM Usuario pt WHERE pt.id = ?1"
     ),
     @NamedQuery(
-            name = PersonalTrainer.REMOVER_POR_ID,
-            query = "DELETE FROM Usuario pt WHERE pt.id = ?1"
+            name  = PersonalTrainer.CONSULTAR_POR_ID,
+            query = "SELECT pt FROM Usuario pt WHERE pt.id = ?1"
     )
 })
+
 public class PersonalTrainer extends Usuario implements Serializable {
 
     /**
      * CONSTANTE PARA ACESSAR AS NAMED QUERY
      */
     public static final String CONSULTAR_POR_ID = "ConsultarPorID";
+    public static final String CONSULTAR_POR_LOGIN = "ConsultarPorLogin";
     public static final String QUANTIDADE_PERSONAL_TRAINER = "QuantidadePersonalTrainer";
     public static final String REMOVER_POR_ID = "RemoverPorID";
     /*
