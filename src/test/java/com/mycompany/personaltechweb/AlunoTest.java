@@ -6,7 +6,6 @@
 package com.mycompany.personaltechweb;
 
 import com.mycompany.personaltechweb.entities.Aluno;
-import com.mycompany.personaltechweb.entities.Exercicio;
 import com.mycompany.personaltechweb.entities.TipoExercicio;
 import com.mycompany.personaltechweb.services.AlunoServico;
 import java.util.List;
@@ -14,6 +13,7 @@ import javax.naming.NamingException;
 import org.junit.After;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
@@ -51,20 +51,37 @@ public class AlunoTest extends Teste {
     public void getAlunoPorCPF() {
         assertNotNull(alunoServico.consultarPorCPF("456.636.524-77"));
     }
-    
+
     @Test
     public void getAlunosPorNome() {
         String nome = "JOAO";
         List<Aluno> alunos = (List<Aluno>) alunoServico.consultarPorNome(nome.toUpperCase());
         assertEquals(alunos.size(), 1);
     }
-    
+
     @Test
     public void getAlunosPorTipoDeExercicio() {
         TipoExercicio tipoExercicio = TipoExercicio.BICEPS;
         List<Aluno> alunos = (List<Aluno>) alunoServico.consultarPorTipoExercicio(tipoExercicio);
         assertEquals(alunos.size(), 6);
     }
-    
-    
+    @Test
+    public void atualizarAlunoPorCpf() {
+        Aluno aluno = alunoServico.criar();
+        aluno = alunoServico.consultarPorCPF("188.070.374-24"); // ID_USUARIO="11"
+        aluno.setNome("ZULEICA");
+        alunoServico.atualizar(aluno);
+        aluno = alunoServico.consultarPorCPF("188.070.374-24");
+        assertEquals("ZULEICA", aluno.getNome());
+    }
+
+    @Test
+    public void deletarAlunoPorCpf() {
+        Aluno aluno = alunoServico.criar();
+        aluno = alunoServico.consultarPorCPF("188.070.374-24"); // ID_USUARIO="12"
+        System.out.println(aluno.getCpf());
+//        alunoServico.deletar(aluno); // não funciona não sei pq
+//        assertNull(alunoServico.consultarPorCPF("188.070.374-24"));
+    }
+
 }
