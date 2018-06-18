@@ -18,8 +18,10 @@ com/mycompany/personaltechweb/validators/ValidadorSexo.class
 com/mycompany/personaltechweb/entities/Avaliacao_.class
 com/mycompany/personaltechweb/entities/Exercicio.class
 com/mycompany/personaltechweb/entities/Usuario_.class
+com/mycompany/personaltechweb/beans/Bean.class
 com/mycompany/personaltechweb/entities/RespostasAvaliacao.class
 com/mycompany/personaltechweb/entities/Usuario.class
 com/mycompany/personaltechweb/services/AlunoServico.class
 com/mycompany/personaltechweb/entities/Avaliacao.class
+com/mycompany/personaltechweb/beans/AlunoBean.class
 com/mycompany/personaltechweb/entities/PersonalTrainer.class
