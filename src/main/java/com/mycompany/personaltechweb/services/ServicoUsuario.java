@@ -59,6 +59,14 @@ public abstract class ServicoUsuario<T extends Usuario> {
             entityManager.flush();
         }
     }
+    
+    // não funciona não sei pq (dá EJBException)
+    public void deletar(@Valid T entidade) {
+        if (existe(entidade)) {
+            entityManager.remove(entidade);
+            entityManager.flush();
+        }
+    }
 
     @TransactionAttribute(SUPPORTS)
     public T consultarPorId(@NotNull Long id) {
