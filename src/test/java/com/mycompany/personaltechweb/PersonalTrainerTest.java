@@ -80,7 +80,7 @@ public class PersonalTrainerTest extends Teste {
         assertEquals(7, PersonalTrainerServico.quantidadePersonalTrainer().size());
     }
 
-//    @Test
+    @Test
     public void removerPersonalTrainer() {
         PersonalTrainer pt = PersonalTrainerServico.consultaPorID((long)13);
         PersonalTrainerServico.deletar(pt);

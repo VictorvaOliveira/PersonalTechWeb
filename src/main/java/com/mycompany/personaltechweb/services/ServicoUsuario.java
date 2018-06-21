@@ -15,6 +15,7 @@ import static javax.persistence.PersistenceContextType.TRANSACTION;
 
 import java.util.List;
 import javax.ejb.TransactionAttribute;
+import javax.ejb.TransactionAttributeType;
 import javax.ejb.TransactionManagement;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -25,12 +26,13 @@ import javax.validation.constraints.NotNull;
 /**
  *
  * @author john
+ * @param <T>
  */
 @TransactionManagement(CONTAINER)
 @TransactionAttribute(REQUIRED)
 public abstract class ServicoUsuario<T extends Usuario> {
 
-    @PersistenceContext(name = "usuario_ejb", type = TRANSACTION)
+    @PersistenceContext(name = "PersonalTechWebPU", type = TRANSACTION)
     protected EntityManager entityManager;
     protected Class<T> classe;
 
@@ -63,9 +65,11 @@ public abstract class ServicoUsuario<T extends Usuario> {
     // não funciona não sei pq (dá EJBException)
     public void deletar(@Valid T entidade) {
         if (existe(entidade)) {
-            entityManager.remove(entidade);
+            T ems = entityManager.merge(entidade);
+            entityManager.remove(ems);
             entityManager.flush();
         }
+        
     }
 
     @TransactionAttribute(SUPPORTS)
@@ -81,8 +85,12 @@ public abstract class ServicoUsuario<T extends Usuario> {
         for (Object parametro : parametros) {
             query.setParameter(i++, parametro);
         }
-
+        try{
         return query.getSingleResult();
+        }
+        catch(Exception e){
+            return null;
+        }
     }
 
     @TransactionAttribute(SUPPORTS)

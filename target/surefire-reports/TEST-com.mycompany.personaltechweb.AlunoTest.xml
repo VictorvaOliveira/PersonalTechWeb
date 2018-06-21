@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="10" failures="0" name="com.mycompany.personaltechweb.AlunoTest" time="36.6" errors="0" skipped="0">
+<testsuite tests="10" failures="0" name="com.mycompany.personaltechweb.AlunoTest" time="32.187" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/local/jdk1.8.0_161/jre/lib/amd64"/>
@@ -63,14 +63,14 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="com.mycompany.personaltechweb.AlunoTest" name="atualizarAlunoPorCpf" time="0.469"/>
-  <testcase classname="com.mycompany.personaltechweb.AlunoTest" name="getAlunosPorTipoDeExercicio" time="0.019"/>
-  <testcase classname="com.mycompany.personaltechweb.AlunoTest" name="getAlunosPorNome" time="0.006"/>
-  <testcase classname="com.mycompany.personaltechweb.AlunoTest" name="getAlunoPorID" time="0.001"/>
-  <testcase classname="com.mycompany.personaltechweb.AlunoTest" name="consultarAlunoCPFInvalido" time="0.499"/>
-  <testcase classname="com.mycompany.personaltechweb.AlunoTest" name="deletarAlunoPorCpf" time="0.012"/>
-  <testcase classname="com.mycompany.personaltechweb.AlunoTest" name="getAlunoPorCPF" time="0.009"/>
-  <testcase classname="com.mycompany.personaltechweb.AlunoTest" name="mensagensValidacao" time="0.036"/>
-  <testcase classname="com.mycompany.personaltechweb.AlunoTest" name="getAlunosMulheres" time="0.015"/>
-  <testcase classname="com.mycompany.personaltechweb.AlunoTest" name="existeAluno" time="0.006"/>
+  <testcase classname="com.mycompany.personaltechweb.AlunoTest" name="atualizarAlunoPorCpf" time="0.311"/>
+  <testcase classname="com.mycompany.personaltechweb.AlunoTest" name="getAlunosPorTipoDeExercicio" time="0.007"/>
+  <testcase classname="com.mycompany.personaltechweb.AlunoTest" name="getAlunosPorNome" time="0.004"/>
+  <testcase classname="com.mycompany.personaltechweb.AlunoTest" name="getAlunoPorID" time="0.005"/>
+  <testcase classname="com.mycompany.personaltechweb.AlunoTest" name="consultarAlunoCPFInvalido" time="0.406"/>
+  <testcase classname="com.mycompany.personaltechweb.AlunoTest" name="deletarAlunoPorCpf" time="0.083"/>
+  <testcase classname="com.mycompany.personaltechweb.AlunoTest" name="getAlunoPorCPF" time="0.007"/>
+  <testcase classname="com.mycompany.personaltechweb.AlunoTest" name="mensagensValidacao" time="0.035"/>
+  <testcase classname="com.mycompany.personaltechweb.AlunoTest" name="getAlunosMulheres" time="0.009"/>
+  <testcase classname="com.mycompany.personaltechweb.AlunoTest" name="existeAluno" time="0.004"/>
 </testsuite>

@@ -8,6 +8,8 @@ package com.mycompany.personaltechweb.services;
 import com.mycompany.personaltechweb.entities.Aluno;
 import com.mycompany.personaltechweb.entities.TipoExercicio;
 import java.util.List;
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
@@ -27,6 +29,11 @@ import org.hibernate.validator.constraints.br.CPF;
 @LocalBean
 @ValidateOnExecution(type = ExecutableType.ALL)
 public class AlunoServico extends ServicoUsuario<Aluno>{
+    @PostConstruct
+    public void init() {
+        super.setClasse(Aluno.class);
+    }
+    
 
     @Override
     public Aluno criar() {

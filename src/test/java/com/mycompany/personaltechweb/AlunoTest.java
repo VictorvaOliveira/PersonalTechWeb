@@ -45,13 +45,13 @@ public class AlunoTest extends Teste {
     @Test
     public void existeAluno() {
         Aluno aluno = alunoServico.criar();
-        aluno.setCpf("456.636.524-77");
+        aluno.setCpf("382.487.724-46");
         assertTrue(alunoServico.existe(aluno));
     }
 
     @Test
     public void getAlunoPorCPF() {
-        assertNotNull(alunoServico.consultarPorCPF("456.636.524-77"));
+        assertNotNull(alunoServico.consultarPorCPF("382.487.724-46"));
     }
 
     @Test
@@ -80,10 +80,9 @@ public class AlunoTest extends Teste {
     @Test
     public void deletarAlunoPorCpf() {
         Aluno aluno = alunoServico.criar();
-        aluno = alunoServico.consultarPorCPF("188.070.374-24"); // ID_USUARIO="12"
-        System.out.println(aluno.getCpf());
-//        alunoServico.deletar(aluno); // não funciona não sei pq
-//        assertNull(alunoServico.consultarPorCPF("188.070.374-24"));
+        aluno = alunoServico.consultarPorCPF("456.636.524-77"); 
+        alunoServico.deletar(aluno); 
+        assertNull(alunoServico.consultarPorCPF("456.636.524-77"));
     }
     
     @Test
@@ -111,7 +110,7 @@ public class AlunoTest extends Teste {
     @Test
     public void getAlunoPorID() {
         
-        //assertNotNull(alunoServico.consultarPorId(new Long(4)));   //Nao Funciona??!!    
+        assertNotNull(alunoServico.consultarPorId(new Long(20)));       
     }
     
     @Test
