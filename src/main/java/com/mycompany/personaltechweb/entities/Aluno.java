@@ -37,11 +37,16 @@ import javax.validation.constraints.Size;
             @NamedQuery(
                     name = Aluno.ALUNO_POR_CPF,
                     query = "SELECT a FROM Aluno a WHERE a.cpf IS NOT NULL AND a.cpf LIKE ?1"
+            ),
+            @NamedQuery(
+                    name = Aluno.ALUNOS_POR_SEXO,
+                    query = "SELECT a FROM Aluno a WHERE a.sexo LIKE ?1"
             )
         }
 )
 public class Aluno extends Usuario implements Serializable {
 public static final String ALUNO_POR_CPF = "AlunoPorCPF";
+public static final String ALUNOS_POR_SEXO = "";
     @Size(max = 5)
     @ElementCollection
     @CollectionTable(name = "TB_TELEFONE_ALUNO",

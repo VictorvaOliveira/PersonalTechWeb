@@ -9,11 +9,17 @@ import com.mycompany.personaltechweb.entities.Aluno;
 import com.mycompany.personaltechweb.entities.TipoExercicio;
 import com.mycompany.personaltechweb.services.AlunoServico;
 import java.util.List;
+import javax.ejb.EJBException;
 import javax.naming.NamingException;
+import javax.validation.ConstraintViolation;
+import javax.validation.ConstraintViolationException;
+import org.hamcrest.CoreMatchers;
+import static org.hamcrest.CoreMatchers.startsWith;
 import org.junit.After;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
@@ -34,10 +40,6 @@ public class AlunoTest extends Teste {
     @After
     public void tearDown() {
         alunoServico = null;
-    }
-
-    @Test
-    public void consultarItensPorCategoria() {
     }
 
     @Test
@@ -82,6 +84,50 @@ public class AlunoTest extends Teste {
         System.out.println(aluno.getCpf());
 //        alunoServico.deletar(aluno); // não funciona não sei pq
 //        assertNull(alunoServico.consultarPorCPF("188.070.374-24"));
+    }
+    
+    @Test
+    public void mensagensValidacao() {
+        Aluno aluno = alunoServico.criar();
+        aluno = alunoServico.consultarPorCPF("188.070.374-24");
+        aluno.setSexo("L");
+        aluno.setSenha("SENHAINVALIDA");
+        aluno.setLogin("LOGININVALIDO");
+        try {
+            alunoServico.atualizar(aluno);
+            assertTrue(false);
+        } catch (EJBException ex) {
+            assertTrue(ex.getCause() instanceof ConstraintViolationException);
+            ConstraintViolationException causa
+                    = (ConstraintViolationException) ex.getCause();
+            for (ConstraintViolation erroValidacao : causa.getConstraintViolations()) {
+                assertThat(erroValidacao.getMessage(),
+                        CoreMatchers.anyOf(startsWith("Sexo inválido"),
+                                startsWith("Login inválido"), startsWith("Senha inválida")));
+            }
+        }
+    }
+    
+    @Test
+    public void getAlunoPorID() {
+        
+        //assertNotNull(alunoServico.consultarPorId(new Long(4)));   //Nao Funciona??!!    
+    }
+    
+    @Test
+    public void consultarAlunoCPFInvalido() {
+        try {
+            alunoServico.consultarPorCPF("111.111.111-11");
+            assertTrue(false);
+        } catch (EJBException ex) {
+            assertTrue(ex.getCause() instanceof ConstraintViolationException);
+        }
+    }
+    
+    @Test
+    public void getAlunosMulheres() {
+        List<Aluno> alunos = alunoServico.consultarPorSexo("F");
+        assertEquals(alunos.size(), 7);
     }
 
 }

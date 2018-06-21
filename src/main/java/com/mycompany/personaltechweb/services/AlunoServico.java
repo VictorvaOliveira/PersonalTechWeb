@@ -7,6 +7,7 @@ package com.mycompany.personaltechweb.services;
 
 import com.mycompany.personaltechweb.entities.Aluno;
 import com.mycompany.personaltechweb.entities.TipoExercicio;
+import java.util.List;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
@@ -15,6 +16,7 @@ import javax.persistence.TypedQuery;
 import javax.validation.constraints.NotNull;
 import javax.validation.executable.ExecutableType;
 import javax.validation.executable.ValidateOnExecution;
+import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.br.CPF;
 
 /**
@@ -52,5 +54,10 @@ public class AlunoServico extends ServicoUsuario<Aluno>{
     @TransactionAttribute(SUPPORTS)
     public Object consultarPorTipoExercicio(TipoExercicio tipoExercicio) {
         return super.consultarEntidades(new Object[] {tipoExercicio}, "Aluno.PorTipoDeExercicio"); 
+    }
+    
+    @TransactionAttribute(SUPPORTS)
+    public List<Aluno> consultarPorSexo(@NotBlank String sexo) {
+        return super.consultarEntidades(new Object[] {sexo}, Aluno.ALUNOS_POR_SEXO);
     }
 }

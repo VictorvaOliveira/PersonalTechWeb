@@ -65,7 +65,8 @@ public class PersonalTrainerTest extends Teste {
         pt.setEndereco(end);
 
         PersonalTrainerServico.persistir(pt);
-        assertTrue(PersonalTrainerServico.existe(pt));
+        //assertTrue(PersonalTrainerServico.existe(pt)); // Testa apenas classe em si
+        assertNotNull(pt.getId()); // Testa a Persistência
     }
     
     @Test
