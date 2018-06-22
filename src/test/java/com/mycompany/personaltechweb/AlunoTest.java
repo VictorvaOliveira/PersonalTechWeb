@@ -76,7 +76,7 @@ public class AlunoTest extends Teste {
     @Test
     public void atualizarAlunoPorCpf() {
         Aluno aluno = alunoServico.criar();
-        aluno = alunoServico.consultarPorCPF("188.070.374-24"); // ID_USUARIO="11"
+        aluno = alunoServico.consultarPorCPF("188.070.374-24"); 
         aluno.setNome("ZULEICA");
         alunoServico.atualizar(aluno);
         aluno = alunoServico.consultarPorCPF("188.070.374-24");

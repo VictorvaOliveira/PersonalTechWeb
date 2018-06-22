@@ -62,31 +62,32 @@ public class AvaliacaoTest extends Teste {
         Aluno aluno = alunoServico.criar();
         aluno = alunoServico.consultarPorId((long) 11);
         aluno.addAvaliacao(avaliacao1);
-        aluno.addAvaliacao(avaliacao2);
+        aluno.addAvaliacao(avaliacao2);       
         alunoServico.atualizar(aluno);
+        aluno = alunoServico.consultarPorId((long) 11);
         assertEquals(2, aluno.getAvaliacoes().size());
     }
 
     @Test
-    public void deleteAvaliacao() {
-//        Não consegui fazer funcionar assim:
-
-//        Aluno aluno = alunoServico.criar();
-//        aluno = alunoServico.consultarPorId((long) 5);
-//        Avaliacao avaliacao = servicoAvaliacao.criar();
-//        avaliacao = aluno.getAvaliacoes().get(0);
-//        aluno.removeAvaliacao(avaliacao);
-//        alunoServico.atualizar(aluno);
-//        assertEquals(1, aluno.getAvaliacoes().size());
-
-//        Nem assim:
-//        Avaliacao avaliacao = servicoAvaliacao.criar();
-//        avaliacao = servicoAvaliacao.consultarPorId((long) 5);
-//        servicoAvaliacao.deletar(avaliacao);
-//        assertNull(servicoAvaliacao.consultarPorId((long) 5));
-
-//        Nem assim:
-//        alunoServico.consultarPorId((long)5).getAvaliacoes().remove(0);
-//        assertTrue(true);
+    public void deleteAvaliacao() {            
+        Avaliacao avaliacao = servicoAvaliacao.consultarPorId((long) 7);
+        servicoAvaliacao.deletar(avaliacao);
+        assertNull(servicoAvaliacao.consultarPorId((long) 7));
+    }
+    
+    @Test
+    public void getAvaliacoesPorPersonal() {
+        List<Avaliacao> avaliacoes = servicoAvaliacao.avaliacoesPorPersonal("THOR");
+        assertEquals(avaliacoes.size(), 6);
+    }
+    
+    @Test
+    public void atualizarAvaliacao() {
+        
+        Avaliacao avaliacao = servicoAvaliacao.consultarPorId((long) 1); 
+        avaliacao.setNome_personal("MARIA");
+        servicoAvaliacao.atualizar(avaliacao);
+        avaliacao = servicoAvaliacao.consultarPorId((long) 1);
+        assertEquals("MARIA", avaliacao.getNome_personal());
     }
 }

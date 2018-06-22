@@ -92,6 +92,7 @@ public class PersonalTrainerTest extends Teste {
         PersonalTrainer pt = PersonalTrainerServico.consultarPorId((long) 26);
         pt.setEmail("descorpejb@gmail.com");
         PersonalTrainerServico.atualizar(pt);
+        pt = PersonalTrainerServico.consultarPorId((long) 26);
         assertEquals("descorpejb@gmail.com", pt.getEmail());
     }
 

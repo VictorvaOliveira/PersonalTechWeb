@@ -5,7 +5,6 @@ com/mycompany/personaltechweb/entities/Pergunta_.class
 com/mycompany/personaltechweb/entities/TipoExercicio.class
 com/mycompany/personaltechweb/validators/ValidaSexo.class
 com/mycompany/personaltechweb/entities/RespostasAvaliacao_.class
-com/mycompany/personaltechweb/services/AvaliacaoServico.class
 com/mycompany/personaltechweb/services/ServicoUsuario.class
 com/mycompany/personaltechweb/entities/Endereco_.class
 com/mycompany/personaltechweb/services/PersonalTrainerServico.class
