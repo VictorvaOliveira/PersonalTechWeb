@@ -11,6 +11,7 @@ import com.mycompany.personaltechweb.entities.Endereco;
 import com.mycompany.personaltechweb.entities.PersonalTrainer;
 import com.mycompany.personaltechweb.services.PersonalTrainerServico;
 import java.util.Calendar;
+import javax.annotation.PostConstruct;
 import javax.ejb.EJBException;
 //import java.util.Calendar;
 import javax.naming.NamingException;
@@ -65,16 +66,15 @@ public class PersonalTrainerTest extends Teste {
         pt.setEndereco(end);
 
         PersonalTrainerServico.persistir(pt);
-        //assertTrue(PersonalTrainerServico.existe(pt)); // Testa apenas classe em si
-        assertNotNull(pt.getId()); // Testa a Persistência
+        assertNotNull(pt.getId());
     }
-    
+
     @Test
-    public void consultaPorID() {
-        PersonalTrainer pt = PersonalTrainerServico.consultaPorID((long) 1);
+    public void consultarPorId() {
+        PersonalTrainer pt = PersonalTrainerServico.consultarPorId((long) 1);
         assertEquals("cba123", pt.getLogin());
     }
-   
+
     @Test
     public void quantidadePersonalTrainer() {
         assertEquals(7, PersonalTrainerServico.quantidadePersonalTrainer().size());
@@ -82,14 +82,14 @@ public class PersonalTrainerTest extends Teste {
 
     @Test
     public void removerPersonalTrainer() {
-        PersonalTrainer pt = PersonalTrainerServico.consultaPorID((long)13);
+        PersonalTrainer pt = PersonalTrainerServico.consultarPorId((long) 13);
         PersonalTrainerServico.deletar(pt);
-        assertEquals(null, PersonalTrainerServico.consultaPorID((long)13));
+        assertEquals(null, PersonalTrainerServico.consultarPorId((long) 13));
     }
 
     @Test
     public void atualizarPersonalTrainer() {
-        PersonalTrainer pt = PersonalTrainerServico.consultaPorID((long) 26);
+        PersonalTrainer pt = PersonalTrainerServico.consultarPorId((long) 26);
         pt.setEmail("descorpejb@gmail.com");
         PersonalTrainerServico.atualizar(pt);
         assertEquals("descorpejb@gmail.com", pt.getEmail());
@@ -97,7 +97,7 @@ public class PersonalTrainerTest extends Teste {
 
     @Test
     public void atualizacaoInvalidaPersonalTrainer() {
-        PersonalTrainer pt = PersonalTrainerServico.consultaPorID((long) 14);
+        PersonalTrainer pt = PersonalTrainerServico.consultarPorId((long) 14);
         pt.setSenha("111111111");
         try {
             PersonalTrainerServico.atualizar(pt);

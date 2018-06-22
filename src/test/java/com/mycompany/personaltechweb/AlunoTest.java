@@ -51,7 +51,7 @@ public class AlunoTest extends Teste {
 
     @Test
     public void getAlunoPorCPF() {
-        assertNotNull(alunoServico.consultarPorCPF("382.487.724-46"));
+       assertEquals(alunoServico.consultarPorCPF("382.487.724-46").getNome(), "JIMMY");
     }
 
     @Test
@@ -62,11 +62,17 @@ public class AlunoTest extends Teste {
     }
 
     @Test
+    public void getAlunoPorID() {
+        assertNotNull(alunoServico.consultarPorId(new Long(20)));
+    }
+
+    @Test
     public void getAlunosPorTipoDeExercicio() {
         TipoExercicio tipoExercicio = TipoExercicio.BICEPS;
         List<Aluno> alunos = (List<Aluno>) alunoServico.consultarPorTipoExercicio(tipoExercicio);
         assertEquals(alunos.size(), 6);
     }
+
     @Test
     public void atualizarAlunoPorCpf() {
         Aluno aluno = alunoServico.criar();
@@ -78,13 +84,13 @@ public class AlunoTest extends Teste {
     }
 
     @Test
-    public void deletarAlunoPorCpf() {
+    public void deletarAlunoPorId() {
         Aluno aluno = alunoServico.criar();
-        aluno = alunoServico.consultarPorCPF("456.636.524-77"); 
-        alunoServico.deletar(aluno); 
-        assertNull(alunoServico.consultarPorCPF("456.636.524-77"));
+        aluno = alunoServico.consultarPorId((long) 19);
+        alunoServico.deletar(aluno);
+        assertNull(alunoServico.consultarPorId((long) 19));
     }
-    
+
     @Test
     public void mensagensValidacao() {
         Aluno aluno = alunoServico.criar();
@@ -106,13 +112,7 @@ public class AlunoTest extends Teste {
             }
         }
     }
-    
-    @Test
-    public void getAlunoPorID() {
-        
-        assertNotNull(alunoServico.consultarPorId(new Long(20)));       
-    }
-    
+
     @Test
     public void consultarAlunoCPFInvalido() {
         try {
@@ -122,7 +122,7 @@ public class AlunoTest extends Teste {
             assertTrue(ex.getCause() instanceof ConstraintViolationException);
         }
     }
-    
+
     @Test
     public void getAlunosMulheres() {
         List<Aluno> alunos = alunoServico.consultarPorSexo("F");

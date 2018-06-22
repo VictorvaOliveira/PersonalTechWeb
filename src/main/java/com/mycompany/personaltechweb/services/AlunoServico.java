@@ -28,18 +28,18 @@ import org.hibernate.validator.constraints.br.CPF;
 @Stateless(name = "ejb/AlunoServico")
 @LocalBean
 @ValidateOnExecution(type = ExecutableType.ALL)
-public class AlunoServico extends ServicoUsuario<Aluno>{
+public class AlunoServico extends ServicoUsuario<Aluno> {
+
     @PostConstruct
     public void init() {
         super.setClasse(Aluno.class);
     }
-    
 
     @Override
     public Aluno criar() {
         return new Aluno();
     }
-    
+
     @Override
     public boolean existe(@NotNull Aluno usuario) {
         TypedQuery<Aluno> query
@@ -47,24 +47,25 @@ public class AlunoServico extends ServicoUsuario<Aluno>{
         query.setParameter(1, usuario.getCpf());
         return !query.getResultList().isEmpty();
     }
-    
+
     @TransactionAttribute(SUPPORTS)
     public Aluno consultarPorCPF(@CPF String cpf) {
-        return super.consultarEntidade(new Object[] {cpf}, Aluno.ALUNO_POR_CPF);
-    } 
-    
+        return super.consultarEntidade(new Object[]{cpf}, Aluno.ALUNO_POR_CPF);
+    }
+
     @TransactionAttribute(SUPPORTS)
     public Object consultarPorNome(String nome) {
-       return super.consultarEntidades(new Object[] {nome}, "Aluno.PorNome"); 
+        return super.consultarEntidades(new Object[]{nome}, "Aluno.PorNome");
     }
-    
+
     @TransactionAttribute(SUPPORTS)
     public Object consultarPorTipoExercicio(TipoExercicio tipoExercicio) {
-        return super.consultarEntidades(new Object[] {tipoExercicio}, "Aluno.PorTipoDeExercicio"); 
+        return super.consultarEntidades(new Object[]{tipoExercicio}, "Aluno.PorTipoDeExercicio");
     }
-    
+
     @TransactionAttribute(SUPPORTS)
     public List<Aluno> consultarPorSexo(@NotBlank String sexo) {
-        return super.consultarEntidades(new Object[] {sexo}, Aluno.ALUNOS_POR_SEXO);
+        return super.consultarEntidades(new Object[]{sexo}, Aluno.ALUNOS_POR_SEXO);
     }
+    
 }
