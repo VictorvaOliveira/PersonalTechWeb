@@ -41,12 +41,18 @@ import javax.validation.constraints.Size;
             @NamedQuery(
                     name = Aluno.ALUNOS_POR_SEXO,
                     query = "SELECT a FROM Aluno a WHERE a.sexo LIKE ?1"
+            ),
+            @NamedQuery(
+                    name = Aluno.ALUNOS,
+                    query = "SELECT a FROM Aluno a"
             )
         }
 )
 public class Aluno extends Usuario implements Serializable {
 public static final String ALUNO_POR_CPF = "AlunoPorCPF";
-public static final String ALUNOS_POR_SEXO = "";
+public static final String ALUNOS_POR_SEXO = "AlunoPorSexo";
+public static final String ALUNOS = "Alunos";
+
     @Size(max = 5)
     @ElementCollection
     @CollectionTable(name = "TB_TELEFONE_ALUNO",

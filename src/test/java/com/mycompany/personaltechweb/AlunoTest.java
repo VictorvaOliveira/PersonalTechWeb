@@ -51,7 +51,7 @@ public class AlunoTest extends Teste {
 
     @Test
     public void getAlunoPorCPF() {
-       assertEquals(alunoServico.consultarPorCPF("382.487.724-46").getNome(), "JIMMY");
+        assertEquals(alunoServico.consultarPorCPF("382.487.724-46").getNome(), "JIMMY");
     }
 
     @Test
@@ -76,7 +76,7 @@ public class AlunoTest extends Teste {
     @Test
     public void atualizarAlunoPorCpf() {
         Aluno aluno = alunoServico.criar();
-        aluno = alunoServico.consultarPorCPF("188.070.374-24"); 
+        aluno = alunoServico.consultarPorCPF("188.070.374-24");
         aluno.setNome("ZULEICA");
         alunoServico.atualizar(aluno);
         aluno = alunoServico.consultarPorCPF("188.070.374-24");
@@ -129,4 +129,9 @@ public class AlunoTest extends Teste {
         assertEquals(alunos.size(), 7);
     }
 
+    @Test
+    public void alunos() {
+        List<Aluno> alunos = alunoServico.getAlunos();
+        assertEquals(30, alunos.size());
+    }
 }

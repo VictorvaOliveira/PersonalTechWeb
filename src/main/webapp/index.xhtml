@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"  xmlns:h="http://xmlns.jcp.org/jsf/html" 
       xmlns:p="http://primefaces.org/ui" xmlns:ui="http://java.sun.com/jsf/facelets"
@@ -7,46 +12,12 @@
         <title>PersonalTech</title>
     </h:head>
     <h:body>
-        <p:panel id="panel" header="Cadastrar Aluno" footer="PersonalTech">
-            <p:panelGrid columns="2" >
-
-                <h:outputLabel for="primeiroNome" value="Primeiro Nome: " />
-                <p:inputText id="primeiroNome" value="" label="Primeiro nome" required="true" maxlength="20"/>
-
-                <h:outputLabel for="ultimoNome" value="Último Nome: " />
-                <p:inputText id="ultimoNome" value="" label="Último nome" required="true" maxlength="20"/>
-
-                <h:outputLabel for="cpf" value="CPF: " />
-                <p:inputMask id="cpf" value="" label="CPF" mask="999.999.999-99" required="true" maxlength="14"/>
-
-                <h:outputLabel for="sexo" value="Sexo " />
-                <p:inputText id="sexo" value="" label="Sexo" required="true" maxlength="14"/>
-
-                <h:outputLabel for="email" value="Email " />
-                <p:inputText id="email" value="" label="Email" required="true" maxlength="14"/>
-
-                <h:outputLabel for="dataNasc" value="Data de Nascimento " />
-                <p:calendar ></p:calendar>
-
-                <h:outputLabel for="bairro" value="Bairro " />
-                <p:inputText id="bairro" value="" label="Bairro" required="true" maxlength="14"/>
-
-                <h:outputLabel for="rua" value="Rua " />
-                <p:inputText id="rua" value="" label="Rua" required="true" maxlength="14"/>
-
-                <h:outputLabel for="cep" value="CEP " />
-                <p:inputText id="cep" value="" label="CEP" required="true" maxlength="14"/>
-
-                <h:outputLabel for="cidade" value="Cidade " />
-                <p:inputText id="cidade" value="" label="Cidade" required="true" maxlength="14"/>
-
-                <h:outputLabel for="estado" value="Estado " />
-                <p:inputText id="estado" value="" label="Estado" required="true" maxlength="14"/>
-            </p:panelGrid>
-            <br />
-            <p:commandButton value="Salvar" />
-        </p:panel>
-        
-        
+        <h:form>
+            <ui:include src="/menu.xhtml" />
+            <p:separator />
+            <p:panel header="PersonalTech" footer="Personal Tech Descorp">
+                <h:outputText value="Projeto para a segunda avaliação da disciplina de Desenvolvimento Corporativo" />
+            </p:panel>
+        </h:form>
     </h:body>
 </html>

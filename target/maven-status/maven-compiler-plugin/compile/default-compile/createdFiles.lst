@@ -8,8 +8,8 @@ com/mycompany/personaltechweb/entities/RespostasAvaliacao_.class
 com/mycompany/personaltechweb/services/ServicoUsuario.class
 com/mycompany/personaltechweb/entities/Endereco_.class
 com/mycompany/personaltechweb/services/PersonalTrainerServico.class
-com/mycompany/personaltechweb/services/ServicoAvaliacao.class
 com/mycompany/personaltechweb/entities/Aluno_.class
+com/mycompany/personaltechweb/services/ServicoAvaliacao.class
 com/mycompany/personaltechweb/entities/Aluno.class
 com/mycompany/personaltechweb/entities/Pergunta.class
 com/mycompany/personaltechweb/entities/Endereco.class
@@ -19,8 +19,8 @@ com/mycompany/personaltechweb/entities/Exercicio.class
 com/mycompany/personaltechweb/entities/Usuario_.class
 com/mycompany/personaltechweb/beans/Bean.class
 com/mycompany/personaltechweb/entities/RespostasAvaliacao.class
-com/mycompany/personaltechweb/services/AlunoServico.class
 com/mycompany/personaltechweb/entities/Usuario.class
+com/mycompany/personaltechweb/services/AlunoServico.class
 com/mycompany/personaltechweb/beans/AlunoBean.class
 com/mycompany/personaltechweb/entities/Avaliacao.class
 com/mycompany/personaltechweb/entities/PersonalTrainer.class

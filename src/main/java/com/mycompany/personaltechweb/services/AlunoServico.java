@@ -67,5 +67,10 @@ public class AlunoServico extends ServicoUsuario<Aluno> {
     public List<Aluno> consultarPorSexo(@NotBlank String sexo) {
         return super.consultarEntidades(new Object[]{sexo}, Aluno.ALUNOS_POR_SEXO);
     }
+
+    @TransactionAttribute(SUPPORTS)
+    public List<Aluno> getAlunos() {
+        return getEntidades(Aluno.ALUNOS);
+    }
     
 }
