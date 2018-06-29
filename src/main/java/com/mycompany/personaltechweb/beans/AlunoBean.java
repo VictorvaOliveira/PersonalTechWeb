@@ -6,11 +6,13 @@ import java.io.Serializable;
 import java.util.List;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
+import javax.inject.Inject;
 
 @RequestScoped
 @Named("AlunoBean")
 public class AlunoBean extends Bean<Aluno> implements Serializable {
 
+    @Inject
     private AlunoServico alunoServico;
 
     private List<Aluno> alunos;
