@@ -14,4 +14,19 @@
             org.primefaces.application.exceptionhandler.PrimeExceptionHandlerFactory
         </exception-handler-factory>
     </factory>
+    
+    <navigation-rule>
+        <from-view-id>/index.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>cadAluno</from-outcome>
+            <to-view-id>/caddeAluno.xhtml</to-view-id>
+        </navigation-case>  
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/index.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>listaAluno</from-outcome>
+            <to-view-id>/listadeAlunos.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
 </faces-config>

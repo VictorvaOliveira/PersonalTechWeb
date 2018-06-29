@@ -97,4 +97,10 @@ public abstract class ServicoUsuario<T extends Usuario> {
 
         return query.getResultList();
     }
+
+    @TransactionAttribute(SUPPORTS)
+    protected List<T> getEntidades(String nomeQuery) {
+        TypedQuery<T> query = entityManager.createNamedQuery(nomeQuery, classe);
+        return query.getResultList();
+    }
 }
