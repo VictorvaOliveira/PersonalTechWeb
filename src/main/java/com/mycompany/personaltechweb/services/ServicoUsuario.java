@@ -48,10 +48,11 @@ public abstract class ServicoUsuario<T extends Usuario> {
         return true;
     }
 
-    public void persistir(@Valid T entidade) {
-        if (existe(entidade)) {
+    public void persistir(T entidade) {
+        if (true) {
             entityManager.persist(entidade);
         }
+        
     }
 
     public void atualizar(@Valid T entidade) {

@@ -26,6 +26,7 @@ public class AlunoBean extends Bean<Aluno> implements Serializable {
     @Override
     protected void iniciarCampos() {
         setEntidade(alunoServico.criar());
+        
     }
 
     public List<Aluno> getAlunos() {

@@ -6,6 +6,7 @@
 package com.mycompany.personaltechweb.services;
 
 import com.mycompany.personaltechweb.entities.Aluno;
+import com.mycompany.personaltechweb.entities.Endereco;
 import com.mycompany.personaltechweb.entities.TipoExercicio;
 import java.util.List;
 import javax.annotation.PostConstruct;
@@ -33,12 +34,15 @@ public class AlunoServico extends ServicoUsuario<Aluno> {
     @PostConstruct
     public void init() {
         super.setClasse(Aluno.class);
+        
     }
 
     @Override
     public Aluno criar() {
+        
         return new Aluno();
     }
+    
 
     @Override
     public boolean existe(@NotNull Aluno usuario) {

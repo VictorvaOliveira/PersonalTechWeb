@@ -50,6 +50,10 @@ import org.hibernate.validator.constraints.br.CPF;
 )
 public abstract class Usuario implements Serializable {
 
+    public Usuario() {
+        endereco = new Endereco();
+    }
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

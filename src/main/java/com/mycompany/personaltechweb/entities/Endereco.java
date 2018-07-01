@@ -12,6 +12,10 @@ import org.hibernate.validator.constraints.NotBlank;
 @Embeddable
 public class Endereco implements Serializable {
 
+
+
+    
+    
     @NotNull
     @NotBlank
     @Size(max = 150)
@@ -25,7 +29,6 @@ public class Endereco implements Serializable {
     private String bairro;
     
     @NotNull
-    @NotBlank
     @Min(1)
     @Max(99999)
     @Column(name = "END_NUMERO", length = 5, nullable = false)
