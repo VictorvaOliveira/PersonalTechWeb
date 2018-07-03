@@ -35,5 +35,9 @@ public class AlunoBean extends Bean<Aluno> implements Serializable {
         }
         return alunos;
     }
+    
+//    public void excluirAluno(){
+//        alunoServico.deletar(entidade);
+//    }
 
 }

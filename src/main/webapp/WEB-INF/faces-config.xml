@@ -29,4 +29,18 @@
             <to-view-id>/listadeAlunos.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/listadeAlunos.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>pagInicial</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/caddeAluno.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>pagInicial</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
 </faces-config>

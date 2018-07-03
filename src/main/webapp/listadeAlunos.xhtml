@@ -10,9 +10,9 @@
     </h:head>
     <h:body>
         <h:form id="Alunos">
-<!--            <ui:include src="/menu.xhtml"/>
-            <p:separator />-->
-            <p:panel header="Personal Tech">
+            <ui:include src="/menuSecundario.xhtml" />
+            <p:separator />
+            <p:panel header="Personal Tech - Lista de alunos">
                 <p:dataTable var="aluno" value="#{AlunoBean.alunos}" rows="10" paginator="true"  caseSensitiveSort="true"
                              paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
                              rowsPerPageTemplate="5,10,15" emptyMessage="Não existem alunos cadastrados">
@@ -23,8 +23,8 @@
                         <h:outputText value="#{aluno.sobrenome}"/>
                     </p:column>
                     <p:column headerText="Ações">
-                        <p:button  title="Editar" icon="ui-icon-mode_edit">Editar</p:button>
-                        <p:button  title="Excluir" icon="ui-icon-remove_circle">Excluir</p:button>
+                        <p:button  title="Editar" icon="ui-icon-pencil" ></p:button>
+                        <p:button  title="Excluir" icon="ui-icon-closethick"></p:button>
                     </p:column>
                 </p:dataTable>
             </p:panel>

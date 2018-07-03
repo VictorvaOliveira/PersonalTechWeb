@@ -44,7 +44,7 @@ import javax.validation.constraints.Size;
             ),
             @NamedQuery(
                     name = Aluno.ALUNOS,
-                    query = "SELECT a FROM Aluno a"
+                    query = "SELECT a FROM Aluno a ORDER BY a.nome"
             )
         }
 )
