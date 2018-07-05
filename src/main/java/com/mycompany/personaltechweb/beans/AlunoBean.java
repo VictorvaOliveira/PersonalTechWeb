@@ -18,15 +18,37 @@ public class AlunoBean extends Bean<Aluno> implements Serializable {
     private List<Aluno> alunos;
 
     @Override
+    protected void iniciarCampos() {
+        setEntidade(alunoServico.criar());       
+    }
+    
+    @Override
     protected boolean salvar(Aluno entidade) {
         alunoServico.persistir(entidade);
         return true;
     }
 
     @Override
-    protected void iniciarCampos() {
-        setEntidade(alunoServico.criar());
-        
+    public boolean atualizar(Aluno entidade) {       
+        alunoServico.atualizar(entidade);
+        return true;
+    }
+    
+    public String editar(Aluno aluno) {        
+        entidade = alunoServico.consultarPorId(aluno.getId());        
+        return "alterarAluno";       
+    }
+    
+    @Override
+    public boolean deletar(Aluno entidade) {      
+        alunoServico.deletar(entidade);
+        return true;
+    }
+    
+    // Metodo gambiarra p tela atualizar
+    public String remover(Aluno entidade) {                
+        alunoServico.deletar(entidade);
+        return "listadeAlunos?faces-redirect=true";
     }
 
     public List<Aluno> getAlunos() {
@@ -35,9 +57,4 @@ public class AlunoBean extends Bean<Aluno> implements Serializable {
         }
         return alunos;
     }
-    
-//    public void excluirAluno(){
-//        alunoServico.deletar(entidade);
-//    }
-
 }
